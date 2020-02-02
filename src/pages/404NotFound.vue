@@ -1,12 +1,12 @@
 <template>
-    <div class="orderList">
-        orderList
+    <div class="404-not-found">
+        404
     </div>
 </template>
 
 <script>
 export default {
-    name: 'orderList',
+    name: '404-not-found',
     data() { 
         return {
 

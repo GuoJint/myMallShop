@@ -1,12 +1,12 @@
 <template>
-    <div class="orderList">
-        orderList
+    <div class="oder-header">
+oder-header
     </div>
 </template>
 
 <script>
 export default {
-    name: 'orderList',
+    name: 'oder-header',
     data() { 
         return {
 

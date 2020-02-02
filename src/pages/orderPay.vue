@@ -1,12 +1,12 @@
 <template>
-    <div class="orderList">
-        orderList
+    <div class="orderPay">
+        orderPay
     </div>
 </template>
 
 <script>
 export default {
-    name: 'orderList',
+    name: 'orderPay',
     data() { 
         return {
 
