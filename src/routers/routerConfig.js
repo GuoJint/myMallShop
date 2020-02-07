@@ -55,6 +55,11 @@ const routes = [
         ]
     },
     {
+        path : '/login',
+        name : 'login',
+        component: () => import('../pages/login.vue')
+    },
+    {
         path : '*',
         name : '404-not-found',
         component: () => import('../pages/404NotFound.vue')
