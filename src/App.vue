@@ -21,6 +21,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url('./assets/scss/reset.scss');
+// @import url('./assets/scss/config.scss');
+@import url('./assets/scss/mixin.scss');
 </style>

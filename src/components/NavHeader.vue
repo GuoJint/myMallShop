@@ -120,6 +120,8 @@
     name:'nav-header',
     data(){
       return {
+        username:'',
+        cartCount:0,
         phoneList:[]
       }
     },
