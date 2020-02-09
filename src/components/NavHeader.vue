@@ -115,13 +115,11 @@
   </div>
 </template>
 <script>
-//   import {mapState} from 'vuex'
+  import {mapState} from 'vuex'
   export default{
     name:'nav-header',
     data(){
       return {
-        username:'',
-        cartCount:0,
         phoneList:[]
       }
     },
@@ -132,7 +130,7 @@
       cartCount(){
         return this.$store.state.cartCount;
       }*/
-    //   ...mapState(['username','cartCount'])
+      ...mapState(['username','cartCount'])
     },
     filters:{
       currency(val){
@@ -161,19 +159,19 @@
           this.phoneList = res.list;
         })
       },
-    //   getCartCount(){
-    //     this.axios.get('/carts/products/sum').then((res=0)=>{
-    //       this.$store.dispatch('saveCartCount',res);
-    //     })
-    //   },
-    //   logout(){
-    //     this.axios.post('/user/logout').then(()=>{
-    //       this.$message.success('退出成功');
-    //       this.$cookie.set('userId','',{expires:'-1'});
-    //       this.$store.dispatch('saveUserName','');
-    //       this.$store.dispatch('saveCartCount','0');
-    //     })
-    //   },
+      getCartCount(){
+        this.axios.get('/carts/products/sum').then((res=0)=>{
+          this.$store.dispatch('saveCartCount',res);
+        })
+      },
+      // logout(){
+      //   this.axios.post('/user/logout').then(()=>{
+      //     this.$message.success('退出成功');
+      //     this.$cookie.set('userId','',{expires:'-1'});
+      //     this.$store.dispatch('saveUserName','');
+      //     this.$store.dispatch('saveCartCount','0');
+      //   })
+      // },
       goToCart(){
         this.$router.push('/cart');
       }

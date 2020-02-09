@@ -3,6 +3,7 @@ import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import vueLazyLoad from 'vue-lazyload'
+import store from './store'
 import router from './routers/router'
 // import env from './env'
 
@@ -37,6 +38,7 @@ Vue.use(vueLazyLoad,{
 Vue.config.productionTip = false
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')
