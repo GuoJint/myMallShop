@@ -1,15 +1,23 @@
 module.exports = {
     devServer:{
-        host : 'localhost',
-        port : 8080,
-        proxy: {
-            '/api':{
-                target : 'https://mall-pre.springboot.cn',
-                changeOrigin : true,
-                pathRewrite : {
-                    '/api' : ''  //当拦截到/api时会把其转为空，并把其后面的地址拼接到target后面去
-                }
-            }
+      host:'localhost',
+      port:8080,
+      proxy:{
+        '/api':{
+          target:'http://mall-pre.springboot.cn',
+          changeOrigin:true,
+          pathRewrite:{
+            '/api':''
+          }
         }
+      }
+    },
+    // publicPath:'/app',
+    // outputDir:'dist',
+    // indexPath:'index2.html',
+    // lintOnSave:false,
+    productionSourceMap:true,
+    chainWebpack:(config)=>{
+      config.plugins.delete('prefetch');
     }
-}
+  }

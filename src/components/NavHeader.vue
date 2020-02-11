@@ -124,12 +124,12 @@
       }
     },
     computed:{
-      /*username(){
-        return this.$store.state.username;
-      },
-      cartCount(){
-        return this.$store.state.cartCount;
-      }*/
+      // username(){
+      //   return this.$store.state.username;
+      // },
+      // cartCount(){
+      //   return this.$store.state.cartCount;
+      // }
       ...mapState(['username','cartCount'])
     },
     filters:{
@@ -140,10 +140,10 @@
     },
     mounted(){
       this.getProductList();
-    //   let params = this.$route.params;
-    //   if(params && params.from == 'login'){
-    //     this.getCartCount();
-    //   }
+      let params = this.$route.params;
+      if(params && params.from == 'login'){
+        this.getCartCount();
+      }
     },
     methods:{
       login(){
@@ -164,14 +164,14 @@
           this.$store.dispatch('saveCartCount',res);
         })
       },
-      // logout(){
-      //   this.axios.post('/user/logout').then(()=>{
-      //     this.$message.success('退出成功');
-      //     this.$cookie.set('userId','',{expires:'-1'});
-      //     this.$store.dispatch('saveUserName','');
-      //     this.$store.dispatch('saveCartCount','0');
-      //   })
-      // },
+      logout(){
+        this.axios.post('/user/logout').then(()=>{
+          this.$message.success('退出成功');
+          this.$cookie.set('userId','',{expires:'-1'});
+          this.$store.dispatch('saveUserName','');
+          this.$store.dispatch('saveCartCount','0');
+        })
+      },
       goToCart(){
         this.$router.push('/cart');
       }
