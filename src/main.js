@@ -4,12 +4,17 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
-import { Message } from 'element-ui'
+import { Message , FormItem ,Form , Input , Button} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
 import App from './App.vue'
 // import env from './env'
 // mock开关
+Vue.component(FormItem.name, FormItem);
+Vue.component(Form.name, Form);
+Vue.component(Input.name, Input);
+Vue.component(Button.name, Button);
+
 const mock = false;
 if(mock){
   require('./mock/api');

@@ -60,6 +60,11 @@ const routes = [
         component: () => import('../pages/login.vue')
     },
     {
+        path : '/register',
+        name : 'register',
+        component: () => import('../pages/register.vue')
+    },
+    {
         path : '*',
         name : '404-not-found',
         component: () => import('../pages/404NotFound.vue')
