@@ -10,19 +10,34 @@ export default {
   components: {
     
   },
+  data(){
+    return {
+      
+    }
+  },
   mounted(){
-    // // https://www.easy-mock.com/mock/5e33c4969de97e2947886e28/example/mock
-    // let url = "/search/hotwords"
-    // axios.post(url)
-    // .then((res)=>{
-    //   console.log(res);
-    // })
+    if(this.$cookie.get('userId')){
+      this.getUser();
+      this.getCartCount();
+    }
+  },
+  methods:{
+    getUser(){
+      this.axios.get('/user').then((res={})=>{
+        this.$store.dispatch('saveUserName',res.username);
+      })
+    },
+    getCartCount(){
+      this.axios.get('/carts/products/sum').then((res=0)=>{
+        this.$store.dispatch('saveCartCount',res);
+      })
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-@import url('./assets/scss/reset.scss');
-// @import url('./assets/scss/config.scss');
-@import url('./assets/scss/mixin.scss');
+<style lang="scss">
+@import './assets/scss/reset.scss';
+@import './assets/scss/config.scss';
+@import './assets/scss/button.scss';
 </style>
