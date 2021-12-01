@@ -6,9 +6,7 @@
         <div class="swiper">
           <swiper :options="swiperOption">
               <swiper-slide><img src="/imgs/detail/phone-1.jpg" alt=""></swiper-slide>
-              <swiper-slide><img src="/imgs/detail/phone-2.jpg" alt=""></swiper-slide>
-              <swiper-slide><img src="/imgs/detail/phone-3.jpg" alt=""></swiper-slide>
-              <swiper-slide><img src="/imgs/detail/phone-4.jpg" alt=""></swiper-slide>
+              
               <!-- Optional controls -->
               <div class="swiper-pagination"  slot="pagination"></div>
           </swiper>
@@ -102,7 +100,7 @@ export default{
         selected: true
       }).then((res={cartProductVoList:0})=>{
         this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
-        // this.$router.push('/cart');
+        this.$router.push('/cart');
       });
     }
   }
